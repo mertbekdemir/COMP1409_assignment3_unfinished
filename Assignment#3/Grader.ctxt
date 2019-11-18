@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Grader
+comment1.params=m
+comment1.target=Grader(int)
+comment2.params=mark
+comment2.target=void\ addMark(int)
+comment3.params=
+comment3.target=int\ getMarks()
+comment4.params=
+comment4.target=int\ getMax()
+numComments=5
