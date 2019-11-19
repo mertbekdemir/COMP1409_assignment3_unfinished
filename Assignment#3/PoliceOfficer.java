@@ -205,13 +205,14 @@ public class PoliceOfficer
         int index = 0;
         int counter = 0;
         if(licensePlateNumber != null && !licensePlateNumber.isEmpty()){
-        while(index < ticketList.size()){
-            ParkingTicket[] ticket = new ParkingTicket([ticketList.size()]);
-            if(ticket[index].getCarLicensePlateNumber().equalsIgnoreCase(licensePlateNumber)){
+            Iterator<ParkingTicket> ticketIterator = ticketList.Iterator();
+        while(ticketIterator.hasNext()){
+            ArrayList<ParkingTicket> ticket = ticketIterator.next();
+            if(ticket.getCarLicensePlateNumber().equalsIgnoreCase(licensePlateNumber)){
                 counter ++;
-                ticketList.remove(index);
+                ticket.remove();
             }
-            index++;
+           
         }
      }
         return counter;
