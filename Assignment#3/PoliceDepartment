@@ -1,0 +1,87 @@
+/**
+*class PoliceDepartment
+*/
+public class PoliceDepartment{
+
+private String address;
+private ArrayList<PoliceOfficer> officersList;
+
+/**
+*Constructor for PoliceDeparment objects
+*/
+public PoliceDepartment(String address){
+
+policeList = new ArrayList<PoliceOfficer>();
+setAddress(address);
+}
+
+/**
+*method getOfficerList
+*@return officersList
+*/
+public ArrayList<PoliceOfficer> getOfficerList(){
+return officersList;
+}
+
+/**
+*method getAddress
+*return address
+*/
+public String getAddress(){
+return address;
+}
+
+/**
+*method setAddress
+*@param newAddress
+*/
+public void setAddress(String newAddress){
+if(newAddress != null){
+address = newAddress;
+}else{
+throw new IllegalArgumentException("address cannot be null");
+}
+else if(!newAddress.isEmpty()){
+address = newAddress;
+}else{
+throw new IllegalArgumentException("address cannot be an empty String");
+}
+}
+
+/**
+*method addPoliceOfficer
+*/
+public void addPoliceOfficer(PoliceOfficer officer){
+
+if(officer != null){
+officersList.add(officer);
+}
+}
+
+/**
+*method displayTicketsByOfficer
+*/
+public void displayTicketsByOfficer(String officerName){
+if(officerName != null){
+for(PoliceOfficer police: officersList){
+if(police.getOfficerName().equalsIgnoreCase(officerName)){
+System.out.println(ticketList);
+}
+}
+}
+}
+
+/**
+*method calculateSumOfAllTicketsOfAllOfficers
+*/
+public double calculateSumOfAllTicketsOfAllOfficers(){
+int sum =0;
+
+officersList.sumAllFines();
+
+}
+
+
+
+
+}
