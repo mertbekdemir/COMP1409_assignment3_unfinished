@@ -210,7 +210,7 @@ public class PoliceOfficer
             ArrayList<ParkingTicket> ticket = ticketIterator.next();
             if(ticket.getCarLicensePlateNumber().equalsIgnoreCase(licensePlateNumber)){
                 counter ++;
-                ticketIterator.remove(); // ticket.remove(new ParkingTicket(??))
+                ticketIterator.remove(); // ticket.remove(new ParkingTicket(ticket)) ??
             }
            
         }
