@@ -6,7 +6,7 @@
  * @version 1409
  */
 import java.util.ArrayList;
-
+import java.util.Iterator;
 public class PoliceOfficer
 {
     private String officerName;
@@ -162,9 +162,13 @@ public class PoliceOfficer
      * method getTicketArrayByLicenseNumber
      */
     public ParkingTicket[] getTicketArrayByLicenseNumber(String licensePlateNumber){
-        int index = 0;
-        //ParkingTicket[] tix = new ParkingTicket[];
-        return null;
+     
+        for(index = 0; index < ticketList.size();i++)
+        ParkingTicket[] tix = new ParkingTicket[ticketList.size()];
+        if(tix[index].getLicensePlateNumber().equalsIgnoreCase(licensePlateNumber)){
+            tix[index] = ticketList.get(index);
+        }
+        return tix;
     }
     
     /**
@@ -197,11 +201,19 @@ public class PoliceOfficer
      * method deleteTicketsByCarLicense
      * @return number of deleted parking ticket objects
      */
-    public ArrayList<ParkingTicket> deleteTicketsByCarLicense(String licensePlateNumber){
+    public int deleteTicketsByCarLicense(String licensePlateNumber){
         int index = 0;
+        int counter = 0;
+        if(licensePlateNumber != null && !licensePlateNumber.isEmpty()){
         while(index < ticketList.size()){
-            
+            ParkingTicket[] ticket = new ParkingTicket([ticketList.size()]);
+            if(ticket[index].getCarLicensePlateNumber().equalsIgnoreCase(licensePlateNumber)){
+                counter ++;
+                ticketList.remove(index);
+            }
+            index++;
         }
-        return null;
+     }
+        return counter;
     }
 }
