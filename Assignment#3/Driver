@@ -1,0 +1,22 @@
+public class Driver{
+
+ParkedCar car1 = new ParkedCar("Mert1", "Porsche 911", 2018, "ZXCQWE", 150);
+ParkedCar car2 = new ParkedCar("Mert2", "Aston Martin", 2019, "ASDZXC", 140);
+
+ PoliceOfficer police1 = new PoliceOfficer ("OfficerMert1", "123456");
+ PoliceOfficer police2 = new PoliceOfficer ("OfficerMert2", "654321");
+ PoliceOfficer police3 = new PoliceOfficer ("OfficerMert3", "123654");
+ 
+  police1.issueParkingTicket(car1, Parkingmeter meter);
+  police2.issueParkingTicket(car2, Parkingmeter meter);
+  
+PoliceDepartment vanCityPD = new PoliceDepartment("Metro Vancouver");
+//ArrayList<PoliceDepartment> vanCityPD = new ArrayList<PoliceDepartment>("Metro Vancouver");
+  vancityPD.addPoliceOfficer(police1);
+  vancityPD.addPoliceOfficer(police2);
+  vancityPD.addPoliceOfficer(police3);
+  
+  vanCityPD.displayTicketsByOfficer("OfficerMert2");
+  
+  
+}
