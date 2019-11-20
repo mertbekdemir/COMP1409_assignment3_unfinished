@@ -65,7 +65,7 @@ public void displayTicketsByOfficer(String officerName){
 if(officerName != null){
 for(PoliceOfficer police: officersList){
 if(police.getOfficerName().equalsIgnoreCase(officerName)){
-System.out.println(ticketList);
+System.out.println(police.getTicketList());
 }
 }
 }
@@ -76,12 +76,27 @@ System.out.println(ticketList);
 */
 public double calculateSumOfAllTicketsOfAllOfficers(){
 int sum =0;
-
-officersList.sumAllFines();
+//officersList.sumAllFines();
+ for(PoliceOfficer police : officersList){
+ sum += police.sumAllFines();
+ }
 
 }
 
-
-
+/**
+*method totalParkingTicketCountOfACar
+*@return the total number of parking tickets issued to that specific car by any of the police officers in that department
+*/
+public int totalParkingTicketCountOfACar(String licensePlateNumber){
+int counter = 0;
+if(licensePlateNumber != null && !licensePlateNumber.isEmpty()){
+for(PoliceOfficer po: officersList){
+if(po.getCarLicensePlateNumber().equalsIgnoreCase(licensePlateNumber)){
+counter ++;
+}
+}
+}
+return counter;
+}
 
 }
